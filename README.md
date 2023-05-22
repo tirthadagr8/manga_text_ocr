@@ -1,0 +1,1 @@
+# manga_text_ocr
