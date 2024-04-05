@@ -19,13 +19,14 @@ def fetch_data(s):
     driver.get(link)
     sol=WebDriverWait(driver,10).until(
         EC.presence_of_element_located(
-        (By.XPATH,"//button[@aria-label='Copy to clipboard']")
+        (By.XPATH,"//div[@lang='en-US']/p/span")
         )
         )
+    # print(len(sol))
     temp=driver.find_elements(By.XPATH,"//div[@lang='en-US']")
     s=''
     for t in temp:
         s+=t.text
     return s
 
-print(fetch_data('．．．やっぱここは異世界で'))
+# print(fetch_data('．．．やっぱここは異世界で'))
