@@ -19,7 +19,7 @@ def fetch_data(s):
     driver.get(link)
     sol=WebDriverWait(driver,10).until(
         EC.presence_of_element_located(
-        (By.XPATH,"//span[@class='--l --r sentence_highlight']")
+        (By.XPATH,"//button[@aria-label='Copy to clipboard']")
         )
         )
     temp=driver.find_elements(By.XPATH,"//div[@lang='en-US']")
@@ -28,4 +28,4 @@ def fetch_data(s):
         s+=t.text
     return s
 
-# print(fetch_data('体力が回復したわけではあるまい？'))
+print(fetch_data('．．．やっぱここは異世界で'))
